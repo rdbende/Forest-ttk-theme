@@ -6,7 +6,7 @@ package require Tk 8.6
 
 namespace eval ttk::theme::forest-light {
 
-    variable version 1.3
+    variable version 1.0
     package provide ttk::theme::forest-light $version
     variable colors
     array set colors {

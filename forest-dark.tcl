@@ -6,7 +6,7 @@ package require Tk 8.6
 
 namespace eval ttk::theme::forest-dark {
 
-    variable version 1.3
+    variable version 1.0
     package provide ttk::theme::forest-dark $version
     variable colors
     array set colors {
@@ -240,37 +240,37 @@ namespace eval ttk::theme::forest-dark {
 
         ttk::style element create Button.button image \
             [list $I(rect-basic) \
-            	{selected disabled} $I(rect-basic) \
+                {selected disabled} $I(rect-basic) \
                 disabled $I(rect-basic) \
                 selected $I(rect-basic) \
                 pressed $I(rect-basic) \
                 active $I(rect-hover) \
-            ] -border 4 -sticky ewns
+            ] -border 4 -sticky nsew
 
         # Toolbutton
         ttk::style configure Toolbutton -padding {8 4 8 4} -width -10 -anchor center
 
         ttk::style element create Toolbutton.button image \
             [list $I(empty) \
-            	{selected disabled} $I(empty) \
+                {selected disabled} $I(empty) \
                 disabled $I(empty) \
                 selected $I(rect-basic) \
                 pressed $I(rect-basic) \
                 active $I(rect-basic) \
-            ] -border 4 -sticky ewns
+            ] -border 4 -sticky nsew
 
         # Menubutton
         ttk::style configure TMenubutton -padding {8 4 4 4}
 
-        ttk::style element create Menubutton.button \
-            image [list $I(rect-basic) \
+        ttk::style element create Menubutton.button image \
+            [list $I(rect-basic) \
                 disabled $I(rect-basic) \
                 pressed $I(rect-basic) \
                 active $I(rect-hover) \
-            ] -border 4 -sticky ewns 
+            ] -border 4 -sticky nsew 
 
-        ttk::style element create Menubutton.indicator \
-            image [list $I(down) \
+        ttk::style element create Menubutton.indicator image \
+            [list $I(down) \
                 active   $I(down) \
                 pressed  $I(down) \
                 disabled $I(down) \
@@ -279,31 +279,31 @@ namespace eval ttk::theme::forest-dark {
         # OptionMenu
         ttk::style configure TOptionMenu -padding {8 4 4 4}
 
-        ttk::style element create OptionMenu.button \
-            image [list $I(rect-basic) \
+        ttk::style element create OptionMenu.button image \
+            [list $I(rect-basic) \
                 disabled $I(rect-basic) \
                 pressed $I(rect-basic) \
                 active $I(rect-hover) \
-            ] -border 4 -sticky ewns 
+            ] -border 4 -sticky nsew 
 
-        ttk::style element create OptionMenu.indicator \
-            image [list $I(down) \
+        ttk::style element create OptionMenu.indicator image \
+            [list $I(down) \
                 active   $I(down) \
                 pressed  $I(down) \
                 disabled $I(down) \
             ] -width 15 -sticky e
 
         # AccentButton
-        ttk::style configure Accent.TButton -padding {8 4 8 4} -width -10 -anchor center -foreground $colors(-fg)
+        ttk::style configure Accent.TButton -padding {8 4 8 4} -width -10 -anchor center -foreground #eeeeee
 
         ttk::style element create AccentButton.button image \
             [list $I(rect-accent) \
-            	{selected disabled} $I(rect-accent-hover) \
+                {selected disabled} $I(rect-accent-hover) \
                 disabled $I(rect-accent-hover) \
                 selected $I(rect-accent) \
                 pressed $I(rect-accent) \
                 active $I(rect-accent-hover) \
-            ] -border 4 -sticky ewns
+            ] -border 4 -sticky nsew
 
         # Checkbutton
         ttk::style configure TCheckbutton -padding 4
@@ -347,7 +347,7 @@ namespace eval ttk::theme::forest-dark {
                 selected $I(rect-accent) \
                 {pressed !selected} $I(rect-accent) \
                 active $I(rect-hover) \
-            ] -border 4 -sticky ewns
+            ] -border 4 -sticky nsew
 
         # Radiobutton
         ttk::style configure TRadiobutton -padding 4
@@ -363,7 +363,7 @@ namespace eval ttk::theme::forest-dark {
                 {pressed selected} $I(radio-hover) \
                 {active selected} $I(radio-hover) \
                 selected $I(radio-accent) \
-                {pressed !selected} $I(circle-hover) \
+                {pressed !selected} $I(radio-unsel-pressed) \
                 active $I(radio-unsel-hover) \
             ] -width 26 -sticky w
 
@@ -371,8 +371,8 @@ namespace eval ttk::theme::forest-dark {
         ttk::style element create Horizontal.Scrollbar.trough image $I(hor-basic) \
             -sticky ew
 
-        ttk::style element create Horizontal.Scrollbar.thumb \
-             image [list $I(hor-accent) \
+        ttk::style element create Horizontal.Scrollbar.thumb image \
+            [list $I(hor-accent) \
                 disabled $I(hor-basic) \
                 pressed $I(hor-hover) \
                 active $I(hor-hover) \
@@ -381,8 +381,8 @@ namespace eval ttk::theme::forest-dark {
         ttk::style element create Vertical.Scrollbar.trough image $I(vert-basic) \
             -sticky ns
 
-        ttk::style element create Vertical.Scrollbar.thumb \
-            image [list $I(vert-accent) \
+        ttk::style element create Vertical.Scrollbar.thumb image \
+            [list $I(vert-accent) \
                 disabled  $I(vert-basic) \
                 pressed $I(vert-hover) \
                 active $I(vert-hover) \
@@ -392,8 +392,8 @@ namespace eval ttk::theme::forest-dark {
         ttk::style element create Horizontal.Scale.trough image $I(scale-hor) \
             -border 5 -padding 0
 
-        ttk::style element create Horizontal.Scale.slider \
-            image [list $I(thumb-hor-accent) \
+        ttk::style element create Horizontal.Scale.slider image \
+            [list $I(thumb-hor-accent) \
                 disabled $I(thumb-hor-basic) \
                 pressed $I(thumb-hor-hover) \
                 active $I(thumb-hor-hover) \
@@ -402,8 +402,8 @@ namespace eval ttk::theme::forest-dark {
         ttk::style element create Vertical.Scale.trough image $I(scale-vert) \
             -border 5 -padding 0
 
-        ttk::style element create Vertical.Scale.slider \
-            image [list $I(thumb-vert-accent) \
+        ttk::style element create Vertical.Scale.slider image \
+            [list $I(thumb-vert-accent) \
                 disabled $I(thumb-vert-basic) \
                 pressed $I(thumb-vert-hover) \
                 active $I(thumb-vert-hover) \
@@ -423,14 +423,14 @@ namespace eval ttk::theme::forest-dark {
             -sticky ns
 
         # Entry
-        ttk::style element create Entry.field \
-            image [list $I(border-basic) \
+        ttk::style element create Entry.field image \
+            [list $I(border-basic) \
                 {focus hover} $I(border-accent) \
                 invalid $I(border-invalid) \
                 disabled $I(border-basic) \
                 focus $I(border-accent) \
                 hover $I(border-hover) \
-            ] -border 5 -padding {8} -sticky news
+            ] -border 5 -padding {8} -sticky nsew
 
         # Combobox
         ttk::style map TCombobox -selectbackground [list \
@@ -445,8 +445,8 @@ namespace eval ttk::theme::forest-dark {
             {readonly focus} $colors(-selectfg) \
         ]
 
-        ttk::style element create Combobox.field \
-            image [list $I(border-basic) \
+        ttk::style element create Combobox.field image \
+            [list $I(border-basic) \
                 {readonly disabled} $I(rect-basic) \
                 {readonly pressed} $I(rect-basic) \
                 {readonly focus hover} $I(rect-hover) \
@@ -460,8 +460,8 @@ namespace eval ttk::theme::forest-dark {
                 hover $I(border-hover) \
             ] -border 5 -padding {8 8 28 8}
 
-        ttk::style element create Combobox.button \
-            image [list $I(combo-button-basic) \
+        ttk::style element create Combobox.button image \
+            [list $I(combo-button-basic) \
                  {!readonly focus} $I(combo-button-focus) \
                  {readonly focus} $I(combo-button-hover) \
                  {readonly hover} $I(combo-button-hover)
@@ -470,18 +470,18 @@ namespace eval ttk::theme::forest-dark {
         ttk::style element create Combobox.arrow image $I(down) -width 15 -sticky e
 
         # Spinbox
-        ttk::style element create Spinbox.field \
-            image [list $I(border-basic) \
+        ttk::style element create Spinbox.field image \
+            [list $I(border-basic) \
                 invalid $I(border-invalid) \
                 disabled $I(border-basic) \
                 focus $I(border-accent) \
                 hover $I(border-hover) \
-            ] -border 5 -padding {8 8 54 8} -sticky news
+            ] -border 5 -padding {8 8 54 8} -sticky nsew
 
         ttk::style element create Spinbox.uparrow image $I(spin-button-up) -border 4 -sticky nsew
 
-        ttk::style element create Spinbox.downarrow \
-            image [list $I(spin-button-down-basic) \
+        ttk::style element create Spinbox.downarrow image \
+            [list $I(spin-button-down-basic) \
                 focus $I(spin-button-down-focus) \
             ] -border 4 -sticky nsew
 
@@ -490,7 +490,7 @@ namespace eval ttk::theme::forest-dark {
 
         # Sizegrip
         ttk::style element create Sizegrip.sizegrip image $I(sizegrip) \
-            -sticky ewns
+            -sticky nsew
 
         # Separator
         ttk::style element create Horizontal.separator image $I(separator)
@@ -499,23 +499,21 @@ namespace eval ttk::theme::forest-dark {
 
         # Card
         ttk::style element create Card.field image $I(card) \
-            -border 10 -padding 4 -sticky news
+            -border 10 -padding 4 -sticky nsew
 
         # Labelframe
         ttk::style element create Labelframe.border image $I(card) \
-            -border 5 -padding 4 -sticky news
+            -border 5 -padding 4 -sticky nsew
         
         # Notebook
         ttk::style configure TNotebook -padding 2
 
-        ttk::style element create Notebook.border \
-            image $I(card) -border 5
+        ttk::style element create Notebook.border image $I(card) -border 5
 
-        ttk::style element create Notebook.client \
-            image $I(notebook) -border 5
+        ttk::style element create Notebook.client image $I(notebook) -border 5
 
-        ttk::style element create Notebook.tab \
-            image [list $I(tab-basic) \
+        ttk::style element create Notebook.tab image \
+            [list $I(tab-basic) \
                 selected $I(tab-accent) \
                 active $I(tab-hover) \
             ] -border 5 -padding {14 4}
@@ -524,25 +522,25 @@ namespace eval ttk::theme::forest-dark {
         ttk::style element create Treeview.field image $I(card) \
             -border 5
 
-        ttk::style element create Treeheading.cell \
-            image [list $I(tree-basic) \
+        ttk::style element create Treeheading.cell image \
+            [list $I(tree-basic) \
                 pressed $I(tree-pressed)
-            ] -border 5 -padding 6 -sticky ewns
+            ] -border 5 -padding 6 -sticky nsew
         
-        ttk::style element create Treeitem.indicator \
-            image [list $I(right) \
+        ttk::style element create Treeitem.indicator image \
+            [list $I(right) \
                 user2 $I(empty) \
                 user1 $I(down) \
             ] -width 17 -sticky {}
 
         ttk::style configure Treeview -background $colors(-bg)
         ttk::style configure Treeview.Item -padding {2 0 0 0}
+
         ttk::style map Treeview \
             -background [list selected $colors(-selectbg)] \
             -foreground [list selected $colors(-selectfg)]
 
         # Sashes
-        #ttk::style map TPanedwindow \
-        #    -background [list hover $colors(-bg)]
+        #ttk::style map TPanedwindow -background [list hover $colors(-bg)]
     }
 }

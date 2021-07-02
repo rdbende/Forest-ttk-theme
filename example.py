@@ -26,10 +26,10 @@ root.rowconfigure(index=2, weight=1)
 style = ttk.Style(root)
 
 # Import the tcl file
-root.tk.call("source", "forest-light.tcl")
+root.tk.call("source", "forest-dark.tcl")
 
 # Set the theme with the theme_use method
-style.theme_use("forest-light")
+style.theme_use("forest-dark")
 
 # Create lists for the Comboboxes
 option_menu_list = ["", "OptionMenu", "Option 1", "Option 2"]
@@ -92,7 +92,7 @@ entry.insert(0, "Entry")
 entry.grid(row=0, column=0, padx=5, pady=(0, 10), sticky="ew")
 
 # Spinbox
-spinbox = ttk.Spinbox(widgets_frame, from_=0, to=100, increment=0.1)
+spinbox = ttk.Spinbox(widgets_frame, from_=0, to=100)
 spinbox.insert(0, "Spinbox")
 spinbox.grid(row=1, column=0, padx=5, pady=10, sticky="ew")
 
@@ -201,11 +201,11 @@ treeview_data = [
 # Insert treeview data
 for item in treeview_data:
     treeview.insert(parent=item[0], index=item[1], iid=item[2], text=item[3], values=item[4])
-    if item[0] == "" or item[2] == 8 or item[2] == 21:
+    if item[0] == "" or item[2] in (8, 12):
         treeview.item(item[2], open=True) # Open parents
 
 # Select and scroll
-treeview.selection_set(9)
+treeview.selection_set(10)
 treeview.see(7)
 
 # Pane #2
