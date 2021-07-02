@@ -26,10 +26,10 @@ root.rowconfigure(index=2, weight=1)
 style = ttk.Style(root)
 
 # Import the tcl file
-root.tk.call("source", "forest-dark.tcl")
+root.tk.call("source", "forest-light.tcl")
 
 # Set the theme with the theme_use method
-style.theme_use("forest-dark")
+style.theme_use("forest-light")
 
 # Create lists for the Comboboxes
 option_menu_list = ["", "OptionMenu", "Option 1", "Option 2"]
