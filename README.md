@@ -1,5 +1,7 @@
 # Forest theme for ttk
 
+#### Partially based on my [Azure theme](https://github.com/rdbende/Azure-ttk-theme)
+
 ![image](Forest-light%20screenshot.png)
 ![image](Forest-dark%20screenshot.png)
 
