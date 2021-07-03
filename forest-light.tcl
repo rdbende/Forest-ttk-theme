@@ -181,18 +181,6 @@ namespace eval ttk::theme::forest-light {
 
         ttk::style layout Vertical.TSeparator {
             Vertical.separator -sticky nswe
-        }
-        
-        ttk::style layout Horizontal.TickScale {
-            Horizontal.TickScale.trough -sticky ew -children {
-                Horizontal.TickScale.slider -sticky w
-            }
-        }
-        
-        ttk::style layout Vertical.TickScale {
-            Vertical.TickScale.trough -sticky ns -children {
-                Vertical.TickScale.slider -sticky n
-            }
         }        
         
         ttk::style layout Card {
