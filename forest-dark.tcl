@@ -225,11 +225,12 @@ namespace eval ttk::theme::forest-dark {
 
         # Button
         ttk::style configure TButton -padding {8 4 8 4} -width -10 -anchor center
+        ttk::style map TButton -foreground [list disabled #bbbbbb]
 
         ttk::style element create Button.button image \
             [list $I(rect-basic) \
-                {selected disabled} $I(rect-basic) \
-                disabled $I(rect-basic) \
+                {selected disabled} $I(rect-disabled) \
+                disabled $I(rect-disabled) \
                 selected $I(rect-basic) \
                 pressed $I(rect-basic) \
                 active $I(rect-hover) \
