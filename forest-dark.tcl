@@ -109,7 +109,7 @@ namespace eval ttk::theme::forest-dark {
             }
         }
 
-        ttk::style layout Switch {
+        ttk::style layout Switch.TCheckbutton {
             Switch.button -children {
                 Switch.padding -children {
                     Switch.indicator -side left
@@ -118,7 +118,7 @@ namespace eval ttk::theme::forest-dark {
             }
         }
 
-        ttk::style layout ToggleButton {
+        ttk::style layout Toggle.TButton {
             ToggleButton.button -children {
                 ToggleButton.padding -children {
                     ToggleButton.label -side left -expand true

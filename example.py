@@ -131,11 +131,11 @@ accentbutton = ttk.Button(widgets_frame, text="Accentbutton", style="Accent.TBut
 accentbutton.grid(row=7, column=0, padx=5, pady=10, sticky="nsew")
 
 # Togglebutton
-button = ttk.Checkbutton(widgets_frame, text="Togglebutton", style="ToggleButton")
+button = ttk.Checkbutton(widgets_frame, text="Togglebutton", style="Toggle.TButton")
 button.grid(row=8, column=0, padx=5, pady=10, sticky="nsew")
 
 # Switch
-switch = ttk.Checkbutton(widgets_frame, text="Switch", style="Switch")
+switch = ttk.Checkbutton(widgets_frame, text="Switch", style="Switch.TCheckbutton")
 switch.grid(row=9, column=0, padx=5, pady=10, sticky="nsew")
 
 # Panedwindow
